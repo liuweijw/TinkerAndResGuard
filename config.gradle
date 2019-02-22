@@ -1,0 +1,43 @@
+ext {
+
+    android = [
+        compileSdkVersion: 28,
+        minSdkVersion    : 17,
+        targetSdkVersion : 28,
+        applicationId    : "com.github.liuweijw.tinkerdemo",
+        versionCode      : Integer.valueOf("${versionCode}"),
+        versionName      : "${versionName}"
+    ]
+
+    version = [
+        androidSupportSdkVersion: "28.0.0",
+        fastjsonLibVersion      : "1.1.70.android",
+        espressoSdkVersion      : "3.0.2"
+    ]
+
+    dependencies = [
+        //support
+        "appcompat-v7"             : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+        "design"                   : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+        "support-v4"               : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+        "cardview-v7"              : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+        "annotations"              : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+        "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+        "constraint-layout"        : "com.android.support.constraint:constraint-layout:1.1.3",
+
+        "multidex"                 : "com.android.support:multidex:1.0.3",
+        "fastjson"                 : "com.alibaba:fastjson:${version["fastjsonLibVersion"]}",
+        "tinker_android_lib"       : "com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}",
+        "tinker_android_anno"      : "com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}",
+        "tinker_android_loader"    : "com.tencent.tinker:tinker-android-loader:${TINKER_VERSION}",
+
+        //test
+        "junit"                    : "junit:junit:4.12",
+        "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
+        "runner"                   : "com.android.support.test:runner:1.0.2",
+        "espresso-core"            : "com.android.support.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
+        "espresso-contrib"         : "com.android.support.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
+        "espresso-intents"         : "com.android.support.test.espresso:espresso-intents:${version["espressoSdkVersion"]}",
+    ]
+
+}

@@ -1,0 +1,109 @@
+apply plugin: 'AndResGuard'
+
+// https://github.com/shwenzhang/AndResGuard/blob/master/doc/white_list.md
+andResGuard {
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    // it will keep the origin path of your resources when it's true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    compressFilePattern = [
+        "*.png",
+        "*.jpg",
+        "*.jpeg",
+        "*.gif",
+        "resources.arsc"
+    ]
+    whiteList = [
+        // your icon
+        "R.drawable.ic_launcher*",
+
+        "R.string.wt_dc_*",
+
+        // for fabric
+        "R.string.com.crashlytics.*",
+
+        // for firStore
+        "R.string.project_id",
+        "R.id.public_toolbar*",
+
+        // Huawei push
+        "R.string.hms_update_title",
+
+        // for umeng
+        "R.anim.umeng*",
+        "R.string.umeng*",
+        "R.string.UM*",
+        "R.string.tb_*",
+        "R.layout.umeng*",
+        "R.layout.socialize_*",
+        "R.layout.*messager*",
+        "R.layout.tb_*",
+        "R.color.umeng*",
+        "R.color.tb_*",
+        "R.style.*UM*",
+        "R.style.umeng*",
+        "R.drawable.umeng*",
+        "R.drawable.tb_*",
+        "R.drawable.sina*",
+        "R.drawable.qq_*",
+        "R.drawable.tb_*",
+        "R.id.umeng*",
+        "R.id.*messager*",
+        "R.id.progress_bar_parent",
+        "R.id.socialize_*",
+        "R.id.webView",
+
+        // for google-services.json
+        "R.string.google_app_id",
+        "R.string.gcm_defaultSenderId",
+        "R.string.default_web_client_id",
+        "R.string.ga_trackingId",
+        "R.string.firebase_database_url",
+        "R.string.google_api_key",
+        "R.string.google_crash_reporting_api_key",
+
+        // for 个推
+        "R.drawable.push",
+        "R.drawable.push_small",
+        "R.layout.getui_notification",
+
+        // for 极光推送
+        "R.drawable.jpush_notification_icon",
+
+        // for 融云
+        "R.drawable.u*",
+        "R.drawable.rc_*",
+        "R.string.rc_*",
+        "R.layout.rc_*",
+        "R.color.rc_*",
+        "R.id.rc_*",
+        "R.style.rc_*",
+        "R.dimen.rc_*",
+        "R.array.rc_*",
+
+        // for GrowingIO
+        "R.string.growingio_project_id",
+        "R.string.growingio_url_scheme",
+        "R.string.growingio_channel"
+
+    ]
+
+    sevenzip {
+        artifact = "com.tencent.mm:SevenZip:${ANDRESGUARD_VERSION}"
+        //path = "/usr/local/bin/7za"
+    }
+
+    /**
+     * Optional: if finalApkBackupPath is null, AndResGuard will overwrite final apk
+     * to the path which assemble[Task] write to
+     **/
+    // finalApkBackupPath = "${project.rootDir}/final.apk"
+
+    /**
+     * Optional: Specifies the name of the message digest algorithm to user when digesting the entries of JAR file
+     * Only works in V1signing, default value is "SHA-1"
+     **/
+    // digestalg = "SHA-256"
+}

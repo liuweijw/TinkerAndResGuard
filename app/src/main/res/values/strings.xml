@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TinkerAndResGuard</string>
+    <string name="app_test_resource">I am in the base apk</string>
+    <!--<string name="app_test_resource">I am in the patch apk</string>-->
+</resources>
