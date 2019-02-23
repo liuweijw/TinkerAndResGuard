@@ -33,8 +33,9 @@ public class SampleResultService extends DefaultTinkerResultService {
             @Override
             public void run() {
                 if (result.isSuccess) {
-                    ShareTinkerInternals.killAllOtherProcess(getApplicationContext());
-                    android.os.Process.killProcess(android.os.Process.myPid());
+                    // ShareTinkerInternals.killAllOtherProcess(getApplicationContext());
+                    // android.os.Process.killProcess(android.os.Process.myPid());
+                    Toast.makeText(getApplicationContext(), "应用修复成功，应用重启生效", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "应用修复失败", Toast.LENGTH_LONG).show();
                 }
