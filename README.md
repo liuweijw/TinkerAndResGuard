@@ -1,5 +1,5 @@
 # TinkerAndResGuard
-Tinker 热更新（包含资源混淆AndResGuard）, 方便快速接入
+采用 Tinker 热更新（包含资源混淆AndResGuard）, 方便快速一键集成和接入。注：服务端、权限 请自行接入
 
 # 本文接入配置
 
